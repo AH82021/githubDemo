@@ -1,6 +1,6 @@
 package collectionApi.products;
 
-public class Product {
+public class Product  implements Comparable<Product> {
     private int productId;
     private String productName;
 
@@ -43,5 +43,10 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", productPrice=" + productPrice +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product product) {
+        return Double.compare(this.productPrice, product.getProductPrice());
     }
 }
